@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(117, 117, 117, 0.616);
+  border-radius: 100px;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes move {
+  0% {
+    top: 6vh;
+    left: 0px;
+  }
+  15% {
+    top: 0vh;
+    left: 3vh;
+  }
+  30% {
+    right: 7vh;
+    top: 6vh;
+  }
+  45% {
+    left: 0px;
+    top: 0vh;
+  }
+  60% {
+    left: 3vh;
+    top: 5vh;
+  }
+  85% {
+    top: 0vh;
+    right: 9vh;
+  }
+  100% {
+    left: 0px;
+    top: 6vh;
+  }
+}
+
+.header {
+  width: 100vw;
+  z-index: -10;
+  position: relative;
+  #front {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  #back {
+    width: 90%;
+    position: relative;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.body {
+  width: 100%;
+  position: relative;
+  &__content1 {
+    img {
+      background-attachment: fixed;
+      height: 250px;
+      animation-name: updown;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    display: flex;
+    align-items: center;
+    &__introduce {
+      color: white;
+      font-size: 20px;
+      &__name {
+        font-weight: bold;
+      }
+    }
+  }
+  &__content2 {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 200px 50px 0 40%;
+    img {
+      background-attachment: fixed;
+      height: 250px;
+      animation-name: updown;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    &__strength {
+      color: white;
+      font-size: 20px;
+      &__topic1 {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__content3 {
+    display: flex;
+    align-items: center;
+    padding: 200px 40% 0 0;
+    img {
+      background-attachment: fixed;
+      height: 250px;
+      animation-name: updown;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    &__weakness {
+      color: white;
+      font-size: 20px;
+      &__topic1 {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__content4 {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 200px 50px 0 40%;
+    img {
+      background-attachment: fixed;
+      height: 250px;
+      animation-name: updown;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    &__experience {
+      color: white;
+      font-size: 20px;
+      &__topic1 {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+
+  i {
+    color: grey;
+    font-size: 50px;
+    padding: 100px 100px 50px 100px;
+    transition: all 0.3s;
+  }
+  i:hover {
+    color: white;
+    font-size: 60px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  .cocsg {
+    height: 100px;
+    transition: all 0.3s;
+  }
+  .cocsg:hover {
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  body {
+    p {
+      font-size: 10px;
+    }
+    .icons {
+      height: 100px;
+    }
+  }
+  .contact {
+    i {
+      color: grey;
+      padding: 10vw 2vw 5vw 2vw;
+      font-size: 5vw;
+      transition: all 0.3s;
+    }
+    i:hover {
+      color: white;
+      font-size: 10vw;
+    }
+  }
+
+  .logo {
+    .cocsg {
+      height: 10vw;
+    }
+  }
+  .body {
+    &__content2 {
+      padding: 50px 50px 0 0;
+    }
+    &__content3 {
+      padding: 50px 50px 0 0;
+    }
+    &__content4 {
+      padding: 50px 50px 0 0;
+    }
+  }
+}
